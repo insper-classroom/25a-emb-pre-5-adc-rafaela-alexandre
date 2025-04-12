@@ -33,7 +33,7 @@ void process_task(void *p) {
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
 
-            lista[i] = data;
+           
 
             // implementar filtro aqui!
             if (i < 5){
@@ -42,10 +42,12 @@ void process_task(void *p) {
             }else{
                 i=0;
             }
-            
-            soma += lista[i];
+            lista[i] = data;
 
-
+            soma = 0; 
+            for (int k = 0; k < 5; k++) {
+                soma += lista[k];
+            }
             resultado = soma /5;
             printf ("%d\n", resultado);
 
