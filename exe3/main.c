@@ -36,7 +36,7 @@ void process_task(void *p) {
            
 
             // implementar filtro aqui!
-            if (i < 5){
+            if (i < 4){
                 i++;
 
             }else{
