@@ -25,10 +25,33 @@ void data_task(void *p) {
 
 void process_task(void *p) {
     int data = 0;
+    int lista[5] = {0};
+    int i = 0;
+    int soma;
+    int resultado;
 
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
+
+            lista[i] = data;
+
             // implementar filtro aqui!
+            if (i < 5){
+                i++;
+
+            }else{
+                i=0;
+            }
+            
+            soma += lista[i];
+
+
+            resultado = soma /5;
+            printf ("%d\n", resultado);
+
+
+
+            
 
 
 
